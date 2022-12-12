@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "autoname": "format: {reference_document}-{api_method}",
+ "creation": "2022-12-12 12:19:59.629578",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reference_document",
+  "status",
+  "column_break_3",
+  "api_method",
+  "section_break_5",
+  "request",
+  "column_break_7",
+  "response"
+ ],
+ "fields": [
+  {
+   "fieldname": "reference_document",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Reference Document",
+   "options": "Bank Payment",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "request",
+   "fieldtype": "Code",
+   "label": "Request",
+   "read_only": 1
+  },
+  {
+   "fieldname": "response",
+   "fieldtype": "Code",
+   "label": "Response",
+   "read_only": 1
+  },
+  {
+   "default": "Failure",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Success\nFailure",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "api_method",
+   "fieldtype": "Data",
+   "label": "API Method",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-12-12 12:23:36.650031",
+ "modified_by": "Administrator",
+ "module": "Bank Integration",
+ "name": "Bank API Log",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
