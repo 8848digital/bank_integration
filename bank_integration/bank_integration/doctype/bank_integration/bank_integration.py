@@ -5,4 +5,6 @@
 from frappe.model.document import Document
 
 class BankIntegration(Document):
-	pass
+	def enabled(self):
+		if not self.enabled:
+			frappe.throw('Features are Disabled in Settings!')

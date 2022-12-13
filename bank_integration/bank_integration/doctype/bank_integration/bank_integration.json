@@ -15,6 +15,7 @@
   "credentials_section",
   "user_id",
   "password",
+  "consent_id",
   "server_url",
   "column_break_10",
   "client_id",
@@ -85,12 +86,17 @@
    "fieldname": "client_secret",
    "fieldtype": "Password",
    "label": "Client Secret"
+  },
+  {
+   "fieldname": "consent_id",
+   "fieldtype": "Password",
+   "label": "Consent Id"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2022-12-12 12:01:25.348842",
+ "modified": "2022-12-13 12:18:14.044946",
  "modified_by": "Administrator",
  "module": "Bank Integration",
  "name": "Bank Integration",

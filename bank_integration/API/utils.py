@@ -1,11 +1,11 @@
 import frappe
 
-def set_headers(bi):
+def set_headers(settings):
     header = {
-        'sandbox': bi.sandbox,
-        'bank': bi.bank,
-        'userid': bi.get_password('user_id'),
-        'password': bi.get_password('password'),
-        'clientid': bi.get_password('client_id'),
-        'clientsec': bi.get_password('client_secret')
+        'sandbox': settings.sandbox,
+        'bank': settings.bank,
+        'userid': settings.get_password('user_id'),
+        'password': settings.get_password('password'),
+        'clientid': settings.get_password('client_id'),
+        'clientsec': settings.get_password('client_secret')
     }
