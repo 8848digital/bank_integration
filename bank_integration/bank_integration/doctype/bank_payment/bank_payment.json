@@ -13,14 +13,7 @@
   "company_bank_account",
   "column_break_4",
   "payment_type",
-  "payee_details_section",
-  "payee_account",
-  "party_type",
-  "party",
-  "status",
-  "column_break_9",
-  "amount",
-  "remarks",
+  "bank_payment_item",
   "amended_from"
  ],
  "fields": [
@@ -66,61 +59,16 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "payee_details_section",
-   "fieldtype": "Section Break",
-   "label": "Payee Details"
-  },
-  {
-   "fetch_from": "payee_account.party_type",
-   "fieldname": "party_type",
+   "fieldname": "bank_payment_item",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Party Type",
-   "options": "DocType",
-   "reqd": 1
-  },
-  {
-   "fetch_from": "payee_account.party",
-   "fieldname": "party",
-   "fieldtype": "Dynamic Link",
-   "in_list_view": 1,
-   "label": "Party",
-   "options": "party_type",
-   "reqd": 1
-  },
-  {
-   "fieldname": "column_break_9",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "amount",
-   "fieldtype": "Float",
-   "label": "Amount",
-   "reqd": 1
-  },
-  {
-   "fieldname": "remarks",
-   "fieldtype": "Text",
-   "label": "Remarks"
-  },
-  {
-   "default": "Pending Approval",
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Pending Approval\nPayment Pending\nSuccess\nFailure\nRejected"
-  },
-  {
-   "fieldname": "payee_account",
-   "fieldtype": "Link",
-   "label": "Payee Account",
-   "options": "Bank Account"
+   "label": "Bank Payment Item",
+   "options": "Bank Payment Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-13 12:28:17.568548",
+ "modified": "2023-02-16 08:54:00.987388",
  "modified_by": "Administrator",
  "module": "Bank Integration",
  "name": "Bank Payment",
