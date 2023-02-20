@@ -1,5 +1,5 @@
 import frappe
-from bank_integration.bank_integration.API.utils import set_headers
+from bank_integration.API.utils import set_headers
 import requests
 
 @frappe.whitelist()
