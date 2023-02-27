@@ -1,6 +1,7 @@
 import frappe
 from bank_integration.API.utils import set_headers
 import requests
+import json 
 
 @frappe.whitelist()
 def fund_confirmation(**kwargs):
@@ -23,22 +24,22 @@ def fund_confirmation(**kwargs):
 
 
 @frappe.whitelist()
-def process_payment(**kwargs):
+def process_payment(bp):
     try:
-        bp = frappe.get_doc('Bank Payment',kwargs.get('doc'))
         settings = frappe.get_doc('Bank Integration',{'bank_account':bp.company_bank_account})
         headers = set_headers(settings)
-        url = settings.server_url + "/bank.API.yes_bank.payments.make_payment"
+        url = settings.get_password('server_url') + "/api/method/bank.API.yes_bank.payments.make_payment"
         pe_list = []
         for pe in bp.bank_payment_item:
-            doc = frappe.get_dict('Payment Entry',pe.name)
-            doc['account_doc'] = frappe.get_dict("Bank Account",doc.party_bank_account)
+            doc = frappe.get_doc('Payment Entry',pe.payment_entry).as_dict()
+            doc['account_doc'] = frappe.get_doc("Bank Account",doc.party_bank_account).as_dict()
             pe_list.append(doc)
         payload = {
-            "payment_details": bp.as_dict(),
+            "bank_payment": bp.as_dict(),
             "pe_list": pe_list,
-            "company_account": bp.company_bank_account
+            "company_account": frappe.get_doc("Bank Account",bp.company_bank_account).as_dict()
         }
+        payload = json.dumps(payload, indent=4, sort_keys=False, default=str)
         response = requests.request("POST", url, headers=headers, data=payload)
         return response.json()
     except Exception as e:

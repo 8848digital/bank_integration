@@ -1,8 +1,9 @@
 import frappe
 
 def set_headers(settings):
-    header = {
-        'sandbox': settings.sandbox,
+    return {
+        'Content-Type': 'application/json',
+        'sandbox': str(settings.sandbox),
         'bank': settings.bank,
         'userid': settings.get_password('user_id'),
         'password': settings.get_password('password'),

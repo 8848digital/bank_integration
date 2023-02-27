@@ -13,6 +13,7 @@
   "company_bank_account",
   "column_break_4",
   "payment_type",
+  "section_break_6",
   "bank_payment_item",
   "amended_from"
  ],
@@ -60,15 +61,19 @@
   },
   {
    "fieldname": "bank_payment_item",
-   "fieldtype": "Link",
+   "fieldtype": "Table",
    "label": "Bank Payment Item",
    "options": "Bank Payment Item"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-16 08:54:00.987388",
+ "modified": "2023-02-24 12:20:23.127033",
  "modified_by": "Administrator",
  "module": "Bank Integration",
  "name": "Bank Payment",
