@@ -15,7 +15,7 @@ def fund_confirmation(**kwargs):
         headers = set_headers(header_data)
         headers['consentid'] = settings.get_password('consent_id')
         headers['customerid'] = settings.get_password('user_id')
-        # url = get_url(header_data,settings) + 'fund-confirmation'
+        url = settings.get_password('server_url') + "/api/method/bank.API.yes_bank.payments.fund-confirmation" 
         response = requests.request("POST", url, headers=headers, data=payload)
         return response.json()
     except Exception as e:
